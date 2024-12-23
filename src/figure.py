@@ -1,11 +1,11 @@
 from abc import ABC, abstractmethod
 
 class Figure(ABC):
-    @abstractmethod
+    @property
     def get_area(self):
         pass
 
-    @abstractmethod
+    @property
     def get_perimeter(self):
         pass
 

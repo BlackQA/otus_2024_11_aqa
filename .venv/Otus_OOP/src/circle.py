@@ -1,0 +1,14 @@
+from src.figure import figure
+import math
+
+class Circle(Figure):
+    def __init__(self, radius):
+        if radius <= 0:
+            raise ValueError("The radius cannot be less than or equal to zero")
+        self.radius = radius
+
+    def get_area(self):
+        return math.pi * self.radius ** 2
+
+    def get_perimeter(self):
+        return 2 * math.pi * self.radius

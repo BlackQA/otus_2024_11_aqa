@@ -1,6 +1,7 @@
 from figure import Figure
 import math
 
+
 class Triangle(Figure):
     def __init__(self, side_a, side_b, side_c):
         if (

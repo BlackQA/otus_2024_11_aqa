@@ -1,5 +1,4 @@
 from figure import Figure
-import math
 
 
 class Rectangle(Figure):

@@ -46,16 +46,8 @@ def create_result_json(users, distributed_books):
             "gender": user.get("gender"),
             "address": user.get("address"),
             "age": user.get("age"),
-            "books": [],
+            "books": books,
         }
-        for book in books:
-            book_data = {
-                "title": book.get("Title"),
-                "author": book.get("Author"),
-                "pages": book.get("Pages"),
-                "genre": book.get("Genre"),
-            }
-            user_data["books"].append(book_data)
         result.append(user_data)
     return result
 

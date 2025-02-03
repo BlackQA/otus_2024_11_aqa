@@ -23,7 +23,7 @@ def test_get_breed_image(breed):
     assert "status" in data
     assert data["status"] == "success"
     assert data["message"].endswith(".jpg")
-
+    assert breed in data["message"]
 
 def test_get_all_breeds():
     response = requests.get(f"{BASE_URL}/breeds/list/all")
@@ -44,6 +44,8 @@ def test_get_sub_breeds(sub_breed):
     assert "status" in data
     assert data["status"] == "success"
     assert isinstance(data["message"], list)
+    for sub_breed_name in data["message"]:
+        assert isinstance(sub_breed_name, str)
 
 
 @pytest.mark.parametrize("breed", ["hound", "bulldog", "doberman"])
@@ -58,3 +60,4 @@ def test_get_three_breed_images(breed):
     assert len(data["message"]) == 3
     for image_url in data["message"]:
         assert image_url.endswith(".jpg")
+        assert breed in image_url
